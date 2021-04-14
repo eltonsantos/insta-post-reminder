@@ -21,7 +21,9 @@ function ControlWindow(win, tray) {
     const x = Math.round(
       trayBounds.x + trayBounds.width / 2 - winBounds.width / 2
     );
-    const y = Math.round(trayBounds.y + (trayBounds.height + 3));
+    // const y = Math.round(trayBounds.y + (trayBounds.height + 3));
+    const y = Math.round(trayBounds.y < 100 ? trayBounds.y + trayBounds.height + 3 : trayBounds.y - winBounds.height - 3);
+    // const y = Math.round(trayBounds.y - trayBounds.height - winBounds.height);
 
     return { x, y };
   }
